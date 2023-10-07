@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+     <title>tech.shop</title>
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+     <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<style>
+     * {
+          margin: 0%;
+          padding: 0%;
+          box-sizing: border-box;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+     }
+
+     /* section {
+     display: flex;
+} */
+
+     .section-p1 {
+          padding: 40px 80px;
+     }
+
+     .logo {
+          display: flex;
+          width: 100px;
+          height: 100px;
+          border-radius: 50px;
+     }
+
+     #header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 20px 80px;
+          background-color: #a36c95;
+          box-shadow: 0 5px 15px rgb(0, 0, 0.06);
+          z-index: 999;
+          position: sticky;
+          top: 0%;
+          left: 0%;
+     }
+
+     #navbar ul {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+     }
+
+     #navbar li {
+          list-style: none;
+          padding: 0 20px;
+          position: relative;
+     }
+
+     #navbar li a {
+          text-decoration: none;
+          font-size: 20px;
+          font-weight: 100;
+          color: black;
+          transition: 0.3s ease;
+     }
+
+     #navbar li a:hover,
+     #navbar li .active {
+
+          color: rgb(16, 8, 242);
+
+     }
+
+     #navbar li .active::after,
+     #navbar li a:hover::after {
+          content: "";
+          width: 30%;
+          height: 2px;
+          background: rgb(5, 54, 250);
+          position: absolute;
+          bottom: -4px;
+          left: 20px;
+     }
+
+     #hero {
+          background-image: url("m7.jpg");
+          height: 90vh;
+          width: 100%;
+          padding: 0px;
+          background-size: cover;
+          background-position: top 25% right 0%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          font-size: 50px;
+     }
+
+     #hero h3 {
+          padding-bottom: 15px;
+          font-size: 20px;
+     }
+
+     #hero h1 {
+          color: rgb(252, 251, 251);
+          font-size: large;
+     }
+
+     #hero button {
+          background-image: url(m3.jpg);
+          background-color: transparent;
+          color: blue;
+          border: 0cm;
+          padding: 14px 80px 14px 65px;
+          background-repeat: no-repeat;
+          cursor: pointer;
+          font-weight: 700;
+          font-size: 15px;
+     }
+
+     #feature {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+     }
+
+     #feature .fe-box {
+          width: 180px;
+          text-align: center;
+          padding: 25px 15px;
+          box-shadow: 1px 1px 10px rgb(0, 0, 0.06);
+          border: 1px solid #a36c95;
+          border-radius: 4px;
+          margin: 15px 0px;
+     }
+
+     #feature .fe-box:hover {
+          box-shadow: 5px 5px 34px #a36c95;
+     }
+
+     #feature .fe-box image {
+          width: 100%;
+          margin-bottom: 10px;
+     }
+
+     #feature .fe-box h4 {
+          display: inline;
+          padding: 9px 8px 6px 8px;
+          line-height: 1;
+          border-radius: 4px;
+          color: aliceblue;
+          background-color: rgb(3, 3, 193);
+     }
+
+     #feature .fe-box:nth-child(2) h4 {
+          background-color: rgb(3, 3, 193);
+     }
+
+     #feature .fe-box:nth-child(3) h4 {
+          background-color: rgb(3, 3, 193);
+     }
+
+     #feature .fe-box:nth-child(4) h4 {
+          background-color: rgb(3, 3, 193);
+     }
+
+     #feature .fe-box:nth-child(5) h4 {
+          background-color: rgb(3, 3, 193);
+     }
+
+     #feature .fe-box:nth-child(6) h4 {
+          background-color: rgb(3, 3, 193);
+     }
+
+     #product1 {
+          align-items: center;
+     }
+
+     #product1 .pro-container {
+          display: flex;
+          justify-content: space-between;
+          padding-top: 20px;
+          flex-wrap: wrap;
+     }
+
+     .section-p1 h2 {
+          text-align: center;
+          font-size: 25px;
+     }
+
+     .section-p1 p {
+          text-align: center;
+          font-size: 50px;
+     }
+
+
+     #product .pro-container {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-top: 20px;
+     }
+
+     #product1 .pro {
+          width: 23%;
+          min-width: 250px;
+          padding: 20px 30px;
+          border: 3px solid #a36c95;
+          border-radius: 25px;
+          cursor: pointer;
+          box-shadow: 5px 5px 20px rgb(0, 0, 0.06);
+          margin: 15px 0px;
+          transition: 0.2s ease;
+          position: relative;
+     }
+
+     #product1 .pro:hover {
+          box-shadow: 10px 10px 20px #a36c95;
+     }
+
+
+     #product1 .pro img {
+          width: 100%;
+          border-radius: 20px;
+     }
+
+     #product1 .pro .des {
+          text-align: start;
+          padding: 10px 0px;
+     }
+
+     #product1 .pro .des span {
+          color: #101013;
+          font-size: 13px;
+     }
+
+     #product1 .pro .des h4 {
+          padding-top: 5px;
+     }
+
+     #product1 .pro .des i {
+          font-size: 12px;
+          color: rgb(241, 174, 6);
+     }
+
+     #product1 .pro .des h3 {
+          color: #1c2719;
+     }
+
+     #product1 .pro .cart {
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          border-radius: 50px;
+          /* background-color: #7daaed; */
+          color: #2206c1;
+          /* border: 2px solid #fdfafc; */
+          position: absolute;
+          bottom: 20px;
+          right: 10px;
+     }
+
+     #banner {
+          margin-top: 50px;
+          margin-bottom: 50px;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          background-image: url(m4.jpg);
+          width: 100%;
+          height: 40vh;
+          background-size: cover;
+          background-position: center;
+     }
+
+     #banner h3,
+     h1 {
+          color: #faf9fb;
+          font-size: 50px;
+     }
+
+     #banner h3 {
+          padding-top: 30px;
+     }
+
+
+     #banner h1 span {
+          color: crimson;
+     }
+
+     button.normal {
+          width: 100%;
+          height: 90px;
+          font-size: 50px;
+          background-color: #a36c95;
+          border-radius: 300px;
+          color: #3e04fc;
+     }
+
+     button.normal:hover {
+          background-color: #faf9fb;
+          color: forestgreen;
+     }
+
+     #sm-banner .rachet {
+          width: 100%;
+     }
+</style>
+
+<body>
+
+     <section id="header">
+          <img src="M2.png" class="logo">
+
+          <div id="navbar">
+               <ul>
+                    <li><a class="active" href="home">Home</a></li>
+                    <li><a href="product">Product</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="content">Content</a></li>
+                    <li><a href="page6.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+               </ul>
+          </div>
+     </section>
+
+     <section id="hero">
+          <h4>trade-in-offer</h3>
+               <h2>super value deals</h2>
+               <h1>on all product</h1>
+               <button>Shop How</button>
+     </section>
+
+     <section id="feature" class="section-p1">
+          <div class="fe-box">
+               <img src="m9.webp" alt="" width="150px" height="150px">
+               <h4>Free shipping</h4>
+          </div>
+
+
+          <div class="fe-box">
+               <img src="m16.avif" alt="" width="150px" height="150px">
+               <h4>Online Order</h4>
+          </div>
+
+          <div class="fe-box">
+               <img src="m11.avif" alt="" width="150px" height="150px">
+               <h4>Save Money</h4>
+          </div>
+
+          <div class="fe-box">
+               <img src="m17.avif" alt="" width="150px" height="150px">
+               <h4>Promotion</h4>
+          </div>
+
+          <div class="fe-box">
+               <img src="m14.jpg" alt="" width="150px" height="150px">
+               <h4>Happy Sale</h4>
+          </div>
+
+          <div class="fe-box">
+               <img src="m15.avif" alt="" width="150px" height="150px">
+               <h4>24X7 Support</h4>
+          </div>
+     </section>
+
+     <section id="product1" class="section-p1">
+          <h2>Future Product</h2>
+          <p>New 5G product are on way</p>
+          <div class="pro-container">
+               {{%right%}}
+               <!-- <div class="pro">
+                    <img src="m18.webp" alt="">
+                    <div class="des">
+                         <span>K S Enterprises</span>
+                         <h4>Laser projection keyboard</h4>
+                         <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                         </div>
+                         <h3>₹2327.06</h3>
+                    </div>
+                    <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+               </div>
+
+               <div class="pro">
+                    <img src="24.webp" alt="">
+                    <div class="des">
+                         <span>Gocycle</span>
+                         <h4>Gocycle G4 electric bike</h4>
+                         <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                         </div>
+                         <h3>₹25270.07</h3>
+                    </div>
+                    <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+               </div>
+
+               <div class="pro">
+                    <img src="26.webp" alt="">
+                    <div class="des">
+                         <span>Rocketbook</span>
+                         <h4>Rocketbook Smart Reusable Notebook</h4>
+                         <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                         </div>
+                         <h3>₹999.00</h3>
+                    </div>
+                    <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+               </div>
+
+               <div class="pro">
+                    <img src="27.webp" alt="">
+                    <div class="des">
+                         <span>unknown company</span>
+                         <h4>Skydio 2+</h4>
+                         <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                         </div>
+                         <h3>₹100000.00</h3>
+                    </div>
+                    <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+               </div>
+
+               <div class="pro">
+                    <img src="20.webp" alt="">
+                    <div class="des">
+                         <span>DJI Action 2 under water © DJI</span>
+                         <h4>DJI Action 2</h4>
+                         <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                         </div>
+                         <h3>₹49999.00</h3>
+                    </div>
+                    <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+               </div>
+
+               <div class="pro">
+                    <img src="23.webp" alt="">
+                    <div class="des">
+                         <span>unknown company</span>
+                         <h4>Insta360 One</h4>
+                         <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                         </div>
+                         <h3>₹39000.00</h3>
+                    </div>
+                    <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+               </div> -->
+          </div>
+     </section>
+
+     <section id="banner">
+          <h3>Repair services</h3>
+          <h1>upto<span>50%-off</span> on first Repair services</h1>
+          <button class="normal">Explore More</button>
+     </section>
+
+     <section id="product1" class="section-p1">
+          <h2>tech.shop</h2>
+          <p>New arrivals</p>
+          <div class="pro-container">
+               <div class="pro">
+                    <img src="34.webp" alt="">
+                    <div class="des">
+                         <span>K S Enterprises</span>
+                         <h4>Laser projection keyboard</h4>
+                         <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="far fa-star"></i>
+                         </div>
+                         <h3>₹2327.06</h3>
+                    </div>
+                    <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+               </div>
+
+               <div class="pro">
+                    <img src="30.webp" alt="">
+                    <div class="des">
+                         <span>Gocycle</span>
+                         <h4>Gocycle G4 electric bike</h4>
+                         <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                         </div>
+                         <h3>₹25270.07</h3>
+                    </div>
+                    <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+               </div>
+
+               <div class="pro">
+                    <img src="29.webp" alt="">
+                    <div class="des">
+                         <span>Rocketbook</span>
+                         <h4>Rocketbook Smart Reusable Notebook</h4>
+                         <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                         </div>
+                         <h3>₹999.00</h3>
+                    </div>
+                    <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+               </div>
+
+               <div class="pro">
+                    <img src="33.webp" alt="">
+                    <div class="des">
+                         <span>unknown company</span>
+                         <h4>Skydio 2+</h4>
+                         <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                         </div>
+                         <h3>₹100000.00</h3>
+                    </div>
+                    <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+               </div>
+
+               <div class="pro">
+                    <img src="31.webp" alt="">
+                    <div class="des">
+                         <span>DJI Action 2 under water © DJI</span>
+                         <h4>DJI Action 2</h4>
+                         <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                         </div>
+                         <h3>₹49999.00</h3>
+                    </div>
+                    <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+               </div>
+
+               <div class="pro">
+                    <img src="28.webp" alt="">
+                    <div class="des">
+                         <span>unknown company</span>
+                         <h4>Insta360 One</h4>
+                         <div class="star">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                         </div>
+                         <h3>₹39000.00</h3>
+                    </div>
+                    <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+               </div>
+          </div>
+     </section>
+
+     <!-- <section id="sm-banner" class="section-p1">
+          <div class="rachet">
+          <img src="23.webp" alt="" width="200px" height="200px">
+          <img src="25.webp" alt="" width="200px" height="200px">
+          </div>
+          <div class="rachet_01">
+          <img src="30.webp" alt="" width="200px" height="200px">
+          <div class="rachet">
+          <img src="27.webp" alt="" width="200px" height="200px">
+          </div>   
+     </section> -->
+
+</body>
+
+</html>
